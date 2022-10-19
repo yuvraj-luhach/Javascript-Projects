@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    background-color: black;
+}
+
+.main-container {
+    max-width: 550px;
+    /* padding: 10px; */
+    /* border: 2px solid red; */
+}
+
+.main-container img {
+    max-width: 100%;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.main-container h1 {
+    color: white;
+    font-weight: 500;
+}
+
+.main-container p {
+    color: white;
+    margin: 15px 0;
+}
+
+.btn {
+    background-color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: orange;
+}
+
+.trailer-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.7s;
+    /* border: 2px solid red; */
+}
+
+.active.trailer-container {
+    /* if we have an active class then apply these properties to trailer-container*/
+    /* https://stackoverflow.com/questions/26263065/when-declaring-css-styles-what-is-the-meaning-of-classa-classb-two-class-name */
+    /* when declaring css styles, what is the meaning of .classA.classB (two class names with a dot in the middle and no space)  */
+    /* one element with multiple classes */
+    visibility: hidden;
+    opacity: 0;
+}
+
+.trailer-container video {
+    position: relative;
+    max-width: 900px;
+    outline: none;
+}
+
+@media (max-width: 991px) {
+    .trailer-container video {
+        max-width: 90%;
+    }
+}
+
+.close-icon {
+    position: absolute;
+    top: 300px;
+    right: 300px;
+    color: white;
+    cursor: pointer;
+}
+
+.close-icon:hover {
+    color: red;
+}
